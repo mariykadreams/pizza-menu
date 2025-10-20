@@ -64,30 +64,27 @@ function Header(){
   </header>
 )}
 
-function Menu(){
-  const pizzas= pizzaData;
+function Menu() {
+  const pizzas = pizzaData;
   const numPizzas = pizzas.length;
 
-  return(
-  <main className="menu">
-    <h2>Our menu</h2>
+  return (
+    <main className="menu">
+      <h2>Our menu</h2>
 
-    <ul className="pizzas">
-      {pizzaData.map((pizza) =>(
-         <li className="pizza"> 
-        <img src={pizza.photoName} alt={pizza.name}/>
-        <div>
-          <h3>{pizza.name} </h3>
-          <p>{pizza.ingredients}</p>
-          <span>{pizza.price}  </span>
-        </div>
-    </li>
-      ))}
-    </ul>
-
-  </main>
-   )
+      {numPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzas.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>SMTH</p>
+      )}
+    </main>
+  );
 }
+
 
 function Footer(){
   const hour = new Date().getHours();
@@ -121,8 +118,11 @@ function Order({ closeHour, openHour }) {
 }
 
 
-function Pizza(props){
-    return(
+function Pizza({pizzaObj}){
+
+  if (props.pizzaObj.soldOut) return null;
+
+  return(
     <li className="pizza"> 
         <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name}/>
         <div>
