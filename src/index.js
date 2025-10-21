@@ -71,9 +71,6 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-
-      
-
       {numPizzas > 0 ? (
         <> 
         <p> Authentic Italian cuisine. 6 creative dishes to choose from. All
