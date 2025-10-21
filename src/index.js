@@ -83,7 +83,7 @@ function Menu() {
         </ul>
         </>
       ) : (
-        <p>SMTH</p>
+        <p>We're still working on our menu. Please come back later :)</p>
       )}
     </main>
   );
