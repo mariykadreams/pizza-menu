@@ -131,7 +131,7 @@ function Pizza({pizzaObj}){
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}> 
         <img src={pizzaObj.photoName} alt={pizzaObj.name}/>
         <div>
-          <h3>{pizzaObj.name} </h3>
+          <h3>{pizzaObj.name}</h3>
           <p>{pizzaObj.ingredients}</p>
           <span>{pizzaObj.soldOut ? "Sold out" : pizzaObj.price}</span>
         </div>
